@@ -66,13 +66,11 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onSearch }) => {
       />
 
       {/* Calendar Popup */}
-      <div className='relative'>
-        <CalendarPopup 
+      <CalendarPopup 
         isOpen={isCalendarOpen}
         onClose={() => setIsCalendarOpen(false)}
         triggerRef={calendarButtonRef}
       />
-      </div>
 
       {/* Budget Modal */}
       {isBudgetModalOpen && (
