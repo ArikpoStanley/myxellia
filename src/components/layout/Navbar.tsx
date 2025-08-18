@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useRef } from 'react';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { Header } from './Header';
@@ -33,7 +34,8 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onSearch }) => {
   };
 
   return (
-    <Tooltip.Provider>
+    <div className="relative">
+      <Tooltip.Provider>
       {/* Header */}
       <Header
         user={user}
@@ -45,12 +47,14 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onSearch }) => {
       />
 
       {/* Profile Popup */}
-      {isProfileOpen && (
+      <div className='relative'>
+        {isProfileOpen && (
         <Profile 
           user={user} 
           onClose={() => setIsProfileOpen(false)} 
         />
       )}
+      </div>
 
       {/* Navigation Bar */}
       <NavigationBar
@@ -62,16 +66,19 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onSearch }) => {
       />
 
       {/* Calendar Popup */}
-      <CalendarPopup 
+      <div className='relative'>
+        <CalendarPopup 
         isOpen={isCalendarOpen}
         onClose={() => setIsCalendarOpen(false)}
         triggerRef={calendarButtonRef}
       />
+      </div>
 
       {/* Budget Modal */}
       {isBudgetModalOpen && (
         <BudgetModal onClose={() => setIsBudgetModalOpen(false)} />
       )}
     </Tooltip.Provider>
+    </div>
   );
 };

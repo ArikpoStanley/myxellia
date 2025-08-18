@@ -1,5 +1,4 @@
 'use client'
-import { Navbar } from "@/components/layout/Navbar";
 import { OverviewCard } from "@/components/ui/OverviewCard";
 import { PropertyListingCard } from "@/components/ui/PropertyListing";
 import { SalesOverview } from "@/components/ui/SalesOverview";
@@ -10,8 +9,8 @@ import { useState } from "react";
 const Home: React.FC = () => {
   const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gray-50 max-w-[1440px] mx-auto">
-      <Navbar user={mockUser} />
+    <div className="min-h-screen bg-gray-50 max-w-[1440px] mx-auto relative">
+      
       
       <main className="p-4">
         <div className="max-w-[1284px] mx-auto">
