@@ -16,6 +16,13 @@ export interface SalesMetric {
   isPositive: boolean;
   color: 'blue' | 'green' | 'orange' | 'red';
 }
+export interface MetricsCardProps {
+  label: string;
+  value: string;
+  percentage: number;
+  isPositive: boolean;
+  color: 'blue' | 'green' | 'orange' | 'red';
+}
 
 
 export interface ChartDataPoint {

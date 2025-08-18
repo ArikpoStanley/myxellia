@@ -1,37 +1,38 @@
 import React from 'react';
 import { ArrowUp, ArrowDown } from 'lucide-react';
-import { MetricsCardProps } from "./SalesOverview";
 import { classNames, formatPercentage, getMetricColor } from "@/lib/utils";
+import { SalesMetric } from '@/lib/types';
+
+interface MetricsCardProps {
+  metrics: SalesMetric[];
+}
 
 export const MetricsCard: React.FC<MetricsCardProps> = ({ metrics }) => {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid gap-4">
       {metrics.map((metric, index) => (
-        <div 
-          key={index} 
-          className="bg-white px-4 py-3 rounded-[12px] border border-[#E4E4E4] flex flex-col justify-center"
+        <div
+          key={index}
+          className={classNames(
+            "flex items-center justify-between p-4 rounded-lg",
+            getMetricColor(metric.color) // e.g. bg-blue-100 text-blue-800
+          )}
         >
-          <div className={classNames('text-lg font-bold mb-2', getMetricColor(metric.color))}>
-            {metric.value}
+          <div>
+            <p className="text-lg font-semibold">{metric.value}</p>
+            <p className="text-sm text-gray-500">{metric.label}</p>
           </div>
-          <div className="flex items-center gap-1">
-            <span className="text-[10px] font-semibold text-[#3D3D3D]">
-              {metric.label}
+
+          <div className="flex items-center space-x-1">
+            {/* Conditional arrow rendering */}
+            {metric.isPositive ? (
+              <ArrowUp className="h-4 w-4 text-green-500" />
+            ) : (
+              <ArrowDown className="h-4 w-4 text-red-500" />
+            )}
+            <span className="text-sm font-medium">
+              {formatPercentage(metric.percentage, metric.isPositive)}
             </span>
-            <div className="flex items-center space-x-1">
-              {/* Conditional arrow rendering */}
-              {metric.isPositive ? (
-                <ArrowUp size={10} className={`${index === 2? 'bg-[#14B8A6]' : 'bg-[#12B76A]'} text-white rounded-full`} />
-              ) : (
-                <ArrowDown size={10} className="text-white bg-[#F04438] rounded-full" />
-              )}
-              <span className={classNames(
-                'text-[10px] font-medium',
-                !metric.isPositive ? 'text-[#F04438]' : index === 2? 'text-[#14B8A6]' : 'text-[#12B76A]'
-              )}>
-                {formatPercentage(metric.percentage, metric.isPositive)}
-              </span>
-            </div>
           </div>
         </div>
       ))}
