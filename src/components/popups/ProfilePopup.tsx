@@ -35,7 +35,7 @@ export const Profile: React.FC<ProfileProps> = ({ user, onClose }) => {
   return (
     <div 
       ref={popupRef}
-      className="absolute right-2 mt-2 w-94 bg-white rounded-xl shadow-lg border border-gray-200 p-4 z-50"
+      className="absolute right-20 mt-2 w-94 bg-white rounded-xl shadow-lg border border-gray-200 p-4 z-50"
     >
       {/* User Info */}
       <div className="p-4 border-b border-gray-100 bg-gray-50 rounded-lg ">
