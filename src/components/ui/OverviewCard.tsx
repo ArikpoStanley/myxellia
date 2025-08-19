@@ -65,7 +65,7 @@ export const OverviewCard: React.FC<OverviewCardProps> = ({
         </button>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 px-4 py-5">
+      <div className="grid grid-cols-3 gap-6 px-4 pt-5 pb-4.5">
         <div className="text-left flex flex-col gap-3">
           <div className="text-sm text-[#525252] font-medium">Total</div>
           <div className="text-2xl font-semibold text-[#141414]">
