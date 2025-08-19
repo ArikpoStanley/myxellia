@@ -36,7 +36,7 @@ export const CalendarPopup: React.FC<{
       
       {/* Calendar Panel - Positioned absolute right-0 bottom-0 */}
       <div
-        className="absolute top-16 right-3 bottom-0 z-50 w-[400px] bg-black shadow-2xl"
+        className="absolute top-16 right-0 bottom-0 z-50 w-[400px] bg-black shadow-2xl"
         style={{
           maxHeight: '100vh',
           height: '100vh'
