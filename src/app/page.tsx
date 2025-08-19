@@ -5,7 +5,8 @@ import { SalesOverview } from "@/components/ui/SalesOverview";
 import { mockChartData, mockSalesMetrics, overviewCardsData, PROPERTY_LISTINGS } from "@/lib/data";
 import { handleViewAll } from "@/lib/utils";
 import { useState } from "react";
-import { TbMessages } from "react-icons/tb";
+
+import Icon from "@/components/shared/Icon";
 const Home: React.FC = () => {
   const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
   return (
@@ -54,9 +55,9 @@ const Home: React.FC = () => {
           {/* Floating Budget Button */}
           <button
             onClick={() => setIsBudgetModalOpen(true)}
-            className="absolute flex bottom-[23vh] -right-4 bg-[#141414] cursor-pointer hover:scale-110 justify-center items-center text-white h-14 w-14 border border-gray-50 rounded-full transition-colors z-40"
+            className="absolute flex bottom-[23vh] -right-4 bg-[#242526] cursor-pointer hover:scale-110 justify-center items-center text-white h-14 w-14 border border-[#FFFFFF33] rounded-full transition-colors z-40"
           >
-           <TbMessages size={30} color="white"  fill="white"/>
+           <Icon size='md' name="messages" color="white"  />
           </button>
         </div>
       </main>
