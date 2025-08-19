@@ -55,22 +55,22 @@ export const Profile: React.FC<ProfileProps> = ({ user, onClose }) => {
         {menuItems.map((item, index) => (
           <button
             key={index}
-            className="w-full flex items-center space-x-3 py-5 px-2 text-left border-b border-gray-100 hover:bg-gray-50 transition-colors rounded-md"
+            className="w-full flex items-center space-x-3 py-4.5 px-2 text-left border-b border-gray-100 hover:bg-gray-50 transition-colors rounded-md"
           >
             <div className="flex items-center justify-center w-6 h-6">
               {item.icon}
             </div>
-            <span className="text-gray-700 text-sm">{item.label}</span>
+            <span className="text-black text-[18px]">{item.label}</span>
           </button>
         ))}
         
         {/* Logout */}
         <div className="mt-2 pt-2">
-          <button className="w-full flex items-center space-x-3 py-3 px-2 text-left hover:bg-gray-50 transition-colors text-red-600 rounded-md">
+          <button className="w-full flex items-center space-x-3 py-3 px-2 text-left hover:bg-gray-50 transition-colors text-red-700 rounded-md">
             <div className="flex items-center justify-center w-6 h-6">
-              <LogOut size={18} className="text-red-500 rotate-180" />
+              <LogOut size={18} className="text-red-700 font-semibold rotate-180" />
             </div>
-            <span className='text-sm'>Logout</span>
+            <span className='text-[18px]'>Logout</span>
           </button>
         </div>
       </div>
