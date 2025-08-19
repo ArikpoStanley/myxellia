@@ -2,10 +2,10 @@
 import { OverviewCard } from "@/components/ui/OverviewCard";
 import { PropertyListingCard } from "@/components/ui/PropertyListing";
 import { SalesOverview } from "@/components/ui/SalesOverview";
-import { mockChartData, mockSalesMetrics, mockUser, overviewCardsData, PROPERTY_LISTINGS } from "@/lib/data";
+import { mockChartData, mockSalesMetrics, overviewCardsData, PROPERTY_LISTINGS } from "@/lib/data";
 import { handleViewAll } from "@/lib/utils";
 import { useState } from "react";
-
+import { TbMessages } from "react-icons/tb";
 const Home: React.FC = () => {
   const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
   return (
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       
       
       <main className="p-4">
-        <div className="max-w-[1284px] mx-auto">
+        <div className="max-w-[1284px] mx-auto relative">
           <h1 className="text-xl leading-[100%] font-medium text-[#191919] mb-5">Welcome, Ahmed</h1>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -54,9 +54,9 @@ const Home: React.FC = () => {
           {/* Floating Budget Button */}
           <button
             onClick={() => setIsBudgetModalOpen(true)}
-            className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-40"
+            className="absolute flex bottom-[23vh] -right-4 bg-[#141414] justify-center items-center text-white h-14 w-14 border border-gray-50 rounded-full transition-colors z-40"
           >
-            {/* <Icon name="calculator" size="md" color="white" /> */}
+           <TbMessages size={30} color="white"  fill="white"/>
           </button>
         </div>
       </main>
