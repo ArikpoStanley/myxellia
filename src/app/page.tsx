@@ -54,7 +54,7 @@ const Home: React.FC = () => {
           {/* Floating Budget Button */}
           <button
             onClick={() => setIsBudgetModalOpen(true)}
-            className="absolute flex bottom-[23vh] -right-4 bg-[#141414] justify-center items-center text-white h-14 w-14 border border-gray-50 rounded-full transition-colors z-40"
+            className="absolute flex bottom-[23vh] -right-4 bg-[#141414] cursor-pointer hover:scale-110 justify-center items-center text-white h-14 w-14 border border-gray-50 rounded-full transition-colors z-40"
           >
            <TbMessages size={30} color="white"  fill="white"/>
           </button>
